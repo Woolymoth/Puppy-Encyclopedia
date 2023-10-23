@@ -2,26 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+main {
+  background-color: rgb(231, 227, 221);
+  min-height: 700px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+header{
+  border: solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  background-position: center;
+  background-color: rgb(222,221,226);
+  background: linear-gradient(90deg, rgba(222,221,226,1) 0%, rgba(253,243,234,1) 27%, rgba(218,159,93,1) 92%);
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+nav{
+  margin-right: 200px;
+}
+.navButton{
+  margin-left: 10px;
+}
+.logo{
+  border: solid black;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
 }
