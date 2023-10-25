@@ -4,4 +4,5 @@ export interface Puppy {
     lifeSpan: number;
     information: string;
     funFact: string;
+    picture: string;
 }

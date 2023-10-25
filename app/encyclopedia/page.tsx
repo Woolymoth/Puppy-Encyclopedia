@@ -1,5 +1,5 @@
 "use client";
-import PuppyCardComponent from "../Componens/PuppyCardComponent";
+import PuppyCardComponent from "../../Componens/PuppyCardComponent";
 import { Puppy } from "@/interfaces";
 import Link from "next/link";
 import { useEffect, useState } from "react";
