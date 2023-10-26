@@ -5,6 +5,9 @@
 main {
   background-color: rgb(231, 227, 221);
   min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 header{
@@ -17,6 +20,26 @@ header{
   background-position: center;
   background-color: rgb(222,221,226);
   background: linear-gradient(90deg, rgba(222,221,226,1) 0%, rgba(253,243,234,1) 27%, rgba(218,159,93,1) 92%);
+}
+footer{
+  text-align: center;
+  border: solid black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+  background-position: center;
+  background-color: rgb(222,221,226);
+  background: linear-gradient(90deg, rgba(222,221,226,1) 0%, rgba(253,243,234,1) 27%, rgba(218,159,93,1) 92%);
+}
+#facebook{
+  margin-right: 10px;
+  color: rgb(81, 81, 255);
+}
+#youtube{
+  margin-left: 10px;
+  color: rgb(253, 63, 63)
 }
 nav{
   margin-right: 200px;
@@ -33,4 +56,106 @@ nav{
   background-color: black;
   color: rgb(255, 255, 255);
   font-size: xx-large;
+}
+.home{
+  margin:50px;
+  font-size: xx-large;
+}
+.exerpt{
+  background-color:rgb(63, 63, 63) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin:100px;
+  width: 700px;
+  padding: 20px;
+}
+.exh2{
+background-color: rgba(218,159,93,1);
+margin: 10px;
+font-size: x-large;
+padding: 10px;
+}
+.exp{
+background-color:rgba(218,159,93,1);
+margin: 10px;
+padding: 10px;
+color: black;
+
+}
+.puppyCard{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25px;
+  width: 1000px;
+  min-height: 700px;
+  margin: 50px;
+  background-color:rgb(169, 150, 150);
+  padding: 20px;
+}
+#puppyImage{
+  margin:15px;
+  width: 500px;
+  border-radius: 25px;;
+}
+.puppyInfo{
+  border-radius: 10px;
+  margin: 15px;
+  background-color: rgb(215, 215, 198);
+  padding: 20px;
+}
+#lifeSpan{
+  border-radius: 10px;
+  margin: 15px;
+  background-color: rgb(215, 215, 198);
+  padding: 20px;
+}
+#puppyName{
+  font-size: xx-large;
+}
+.form{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 600px;
+  min-height: 400px;
+  background-color: rgba(218,159,93,1);
+  margin: 40px;
+  padding:20px;
+  border-radius: 20px;
+}
+.formSection{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+input{
+  height: 30px;
+  margin:5px;
+  border-radius: 10px;
+  text-align: center;
+}
+.informationInput{
+min-width: 400px;
+min-height: 200px;
+word-break: break-word;
+}
+.funFactInput{
+  min-height: 70px;
+}
+.submit{
+  border: solid black 3px;
+  border-radius: 5px;
+  max-width: 80px;
+  margin: 10px;
+  background-color: wheat;
+}
+.submit:hover{
+  background-color: rgb(94, 184, 94);
 }

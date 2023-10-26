@@ -4,15 +4,19 @@ interface Props {
 }
 export default function PuppyCardComponent(props: Props) {
   return (
-    <div
-      className="bg-yellow-50 rounded-lg 
-    m-2 p-4 w-full"
-    >
-      <h3 className="text-xl text-blue-600">
+    <main>
+    <div className="puppyCard">
+      <h2 id="puppyName" className="puppyInfo">
         {props.puppy.name}
-      </h3>
-      <p>{props.puppy.information}</p>
-      <p>{props.puppy.funFact}</p>
+      </h2>
+      <img src={props.puppy.picture} alt="Puppy" id="puppyImage"/>
+      <div id="lifeSpan">
+      <h3>Lifespan</h3>
+      <p>Aprox {props.puppy.lifeSpan} years.</p>
+      </div>
+      <p className="puppyInfo">{props.puppy.information}</p>
+      <p className="puppyInfo">{props.puppy.funFact}</p>
     </div>
+    </main>
   );
 }

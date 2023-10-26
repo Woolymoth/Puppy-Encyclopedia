@@ -39,8 +39,9 @@ export default function PuppyForm() {
   };
 
   return (
-    <form className="" onSubmit={handleSubmit}>
-      <label>
+    <main>
+    <form className="form" onSubmit={handleSubmit}>
+      <label className="formSection">
         <span>Name</span>
         <input
           required
@@ -49,7 +50,7 @@ export default function PuppyForm() {
           value={name}
         />
       </label>
-      <label>
+      <label className="formSection">
         <span>Lifespan</span>
         <input
           required
@@ -58,26 +59,26 @@ export default function PuppyForm() {
           value={lifeSpan}
         />
       </label>
-      <label>
+      <label className="formSection">
         <span>Information</span>
-        <input
+        <textarea className="informationInput"
           required
           name="information"
           onChange={(e) => setInformation(e.target.value)}
           value={information}
         />
       </label>
-      <label>
+      <label className="formSection">
         <span>Fun fact</span>
-        <input
+        <textarea className="funFactInput"
           required
           name="funFact"
           onChange={(e) => setFunFact(e.target.value)} // Fixed the variable name here
           value={funFact}
         />
       </label>
-      <label>
-        <span>Picture</span>
+      <label className="formSection">
+        <span>Picture URL</span>
         <input
           required
           name="picture"
@@ -85,7 +86,8 @@ export default function PuppyForm() {
           value={picture}
         />
       </label>
-      <button type="submit">Submit</button>
+      <button  className="submit" type="submit">Submit</button>
     </form>
+    </main>
   );
 }
