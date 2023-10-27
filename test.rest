@@ -1,8 +1,22 @@
-DELETE http://localhost:3000/api/delete
+DELETE http://localhost:3000/api/{id}
 Content-Type: application/json
 
 {
   "id" : 1
+}
+
+###
+
+PATCH http://localhost:3000/api/{150}
+Content-Type: application/json
+
+{
+  "id" : 150,
+  "name" : "Gimli",
+  "lifeSpan" : 2,
+  "information" : "nytt",
+  "funFact" : "Rolig",
+  "picture" : "URL"
 }
 
 ###

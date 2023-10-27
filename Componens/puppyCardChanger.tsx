@@ -1,46 +1,58 @@
-
 import React, { useState } from 'react';
 import { Puppy } from "@/interfaces";
 
 interface Props {
   puppy: Puppy;
-  onUpdate: (updatedPuppy: Puppy) => void; // Add the onUpdate prop
 }
 
-export default function PuppyCardChanger(props: Props) {
-  const [editedPuppy, setEditedPuppy] = useState<Puppy>({ ...props.puppy }); // Initialize with the puppy's data
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setEditedPuppy((prevPuppy) => ({
-      ...prevPuppy,
-      [name]: value,
-    }));
-  };
-
-  const handleUpdatePuppy = () => {
+const PuppyCardChanger = (props: Props) => {
+  const [name, setName] = useState(props.puppy.name);
+  const [pic, setPic] = useState(props.puppy.picture);
+  const [life, setLife] = useState(props.puppy.lifeSpan);
+  const [info, setInfo] = useState(props.puppy.information);
+  const [fact, setFact] = useState(props.puppy.funFact);
+  const handleUpdatePuppy = async () => {
+    console.log('här är ett namn',name)
+    console.log('här är en bild',pic)
+    console.log('här är life',life)
+    console.log('här är info',info)
+    console.log('här är fact',fact)
+    console.log('här är id', props.puppy.id)
     // Call the onUpdate prop to update the puppy in the parent component
-    props.onUpdate(editedPuppy);
+    const res = await fetch('/api/' + props.puppy.id, {
+      method: 'PATCH',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        id: props.puppy.id,
+        name: name,
+        picture: pic,
+        lifeSpan: life,
+        information: info,
+        funFact: fact,
+      })
+    });
   };
 
   return (
     <div>
       <h3>
-        <input type="text" name="name" value={editedPuppy.name} onChange={handleInputChange} />
+        <input type="text" name="name" value={name} onChange={(e) => setName(e.target.value)} />
       </h3>
       <p>
-        <input type="text" name="picture" value={editedPuppy.picture} onChange={handleInputChange} />
+        <input type="text" name="picture" value={pic} onChange={(e) => setPic(e.target.value)} />
       </p>
       <p>
-        <input type="text" name="lifeSpan" value={editedPuppy.lifeSpan} onChange={handleInputChange} />
+        <input type="text" name="lifeSpan" value={life} onChange={(e) => setLife(parseInt(e.target.value))} />
       </p>
       <p>
-        <textarea name="information" value={editedPuppy.information} onChange={handleInputChange} />
+        <input name="information" value={info} onChange={(e) => setInfo(e.target.value)} />
       </p>
       <p>
-        <textarea name="funFact" value={editedPuppy.funFact} onChange={handleInputChange} />
+        <input name="funFact" value={fact} onChange={(e) => setFact(e.target.value)} />
       </p>
       <button onClick={handleUpdatePuppy}>Update</button>
     </div>
   );
 }
+
+export default PuppyCardChanger;

@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import PuppyCardComponent from "../../Componens/PuppyCardComponent";
+import PuppyCardChanger from '@/Componens/puppyCardChanger';
 import { Puppy } from "@/interfaces";
 import Link from "next/link";
 
@@ -19,7 +20,7 @@ export default function PuppyCard() {
   const handleRemovePuppy = async (puppyId: number) => {
     try {
       // Send a DELETE request to the API to remove the puppy
-      await fetch(`/api/deletePuppy?id=` + puppyId, {
+      await fetch(`/api/` + puppyId, {
         method: 'DELETE',
         headers: {
             'Content-Type': 'application/json',
@@ -40,6 +41,7 @@ export default function PuppyCard() {
       {puppies.map((puppy: Puppy) => (
         <div key={puppy.id} className="card">
           <PuppyCardComponent puppy={puppy} />
+          <PuppyCardChanger puppy={puppy}/>
           <button onClick={() => handleRemovePuppy(puppy.id)}>Remove</button>
         </div>
       ))}
