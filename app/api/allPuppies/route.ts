@@ -1,5 +1,5 @@
 import { NextApiResponse, NextApiRequest } from 'next';
-import { query } from "@/lib/db";
+import { query } from "../../../src/lib/db";
 import { NextRequest, NextResponse } from 'next/server';
 
 
